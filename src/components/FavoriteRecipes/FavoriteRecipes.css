@@ -1,0 +1,30 @@
+.favorites-container {
+    margin-top: 80px;
+}
+
+.box-favorite-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+}
+
+.box-favorite-container button {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-button {
+    background-color: #3672aa;
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.delete-button {
+    background-color: #c53c1a;
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+}
