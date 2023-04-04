@@ -1,0 +1,37 @@
+.navbar-container {
+   position: fixed;
+   top: 0;
+   right: 0;
+   left: 0;
+}
+
+nav {
+    width: 100%;
+    background-color: coral;
+    height: 80px;
+    
+}
+.navbar-design {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.navbar-list {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center !important;
+    flex-wrap: nowrap;
+}
+
+.navbar-list li  {
+    list-style-type: none;
+}
+
+.navbar-list a {
+    text-decoration: none;
+    color: white;
+    margin: 0 15px;
+}
+
