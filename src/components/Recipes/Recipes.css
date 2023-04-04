@@ -1,16 +1,36 @@
 
-.recipes-wrapper {
-    display: flex;
-    margin-top:80px;
+.title-wrapper {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap:15px;
+  margin-bottom: 15px;
+}
+
+.search-button {
+  background-color: coral;
+  padding: 5px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.search-bar {
+  font-size: 20px;
+  margin-right: 5px;
 }
 
 .search-form {
-  position: fixed;
   left: 0;
   right: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.recipes-wrapper {
+    display: flex;
 }
 
 .recipes-container {
@@ -56,27 +76,3 @@
       max-width: 250px;
     }
   } 
-
-  /* .recipes-wrapper {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-  
-  .search-form {
-    padding: 20px;
-  }
-  
-  .recipes-container {
-    flex: 1;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  .recipe-description {
-    padding: 20px;
-  } */

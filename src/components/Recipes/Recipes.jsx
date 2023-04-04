@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import "./Recipes.css"
 import RecipeDescription from '../RecipeDescription/RecipeDescription';
+import { useDispatch } from 'react-redux';
+import { recipeActions } from '../../store/open-description';
+import {v4 as uuidv4} from "uuid";
 
 const Recipes = () => {
+
+    const dispatch = useDispatch();
+
     const APP_ID = "70e253a4";
     const APP_KEY = "3e1c26d95e61dda9f22cd408cc362449";
     // API request
@@ -21,8 +27,6 @@ const Recipes = () => {
         console.log(response.hits);
     };
 
-
-
     const updateSearch = e => {
         setSearch(e.target.value);
     }
@@ -34,18 +38,26 @@ const Recipes = () => {
         setSearch("");
     }
 
+    const handleRecipe = (label) => {
+        dispatch(recipeActions.setShowDescription({...label, id: uuidv4()}))
+    }
 
     return (
-        <div className='recipes-wrapper'>
+        <div>
+            <div className='title-wrapper'>
+              <h1>Search your recipe</h1>
             <form onSubmit={getSearch} className="search-form">
                 <input className="search-bar" type="text" value={search} onChange={updateSearch} />
                 <button className="search-button" type="submit">search</button>
-            </form>
+            </form>  
+            </div>
+            
+           <div className='recipes-wrapper'>
             <div className='recipes-container'>
                 {data.map((e, i) => {
                     return (
                         <div key={i}>
-                            <div className='box-container'>
+                            <div className='box-container' onClick={() => handleRecipe(e)}>
                                 <h4>{e.recipe.label}</h4>
                                 <img className='box-image' src={e.recipe.image} alt="" />
                             </div>
@@ -55,7 +67,9 @@ const Recipes = () => {
                 })}
             </div>
             <RecipeDescription />
+        </div> 
         </div>
+        
     )
 }
 

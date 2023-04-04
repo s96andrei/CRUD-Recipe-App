@@ -18,7 +18,7 @@ const App = () => {
       element: <Navbar />,
       children: [ 
         {
-          path: "home",
+          path: "/",
           element: <Home/>,
         },
         {
