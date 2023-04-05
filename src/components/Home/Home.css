@@ -1,12 +1,10 @@
 .home-container {
     display: flex;
     justify-content: center;
-    padding-top: 80px;
     background: url(../../assets/background.jpg);
-    height: 100vh  ;
+    height: 100vh ;
     background-repeat: no-repeat;
     background-position: center top;
-    /* filter:opacity(0.5); */
 }
 
 .inner-container {
@@ -19,8 +17,7 @@
     padding: 15px;
     background-color: rgba(255, 127, 80, 0.784);
     height: fit-content;
-    margin-top: 60px;
-    /* filter: opacity(0.);8 */
+    margin-top: 100px;
     color: #fff;
     gap: 25px;
     border-radius: 10px;

@@ -3,7 +3,7 @@ import "./Recipes.css"
 import RecipeDescription from '../RecipeDescription/RecipeDescription';
 import { useDispatch } from 'react-redux';
 import { recipeActions } from '../../store/open-description';
-import {v4 as uuidv4} from "uuid";
+import { v4 as uuidv4 } from "uuid";
 
 const Recipes = () => {
 
@@ -38,38 +38,49 @@ const Recipes = () => {
         setSearch("");
     }
 
-    const handleRecipe = (label) => {
-        dispatch(recipeActions.setShowDescription({...label, id: uuidv4()}))
+    const handleRecipe = ({label, image, mealType, ingredients}) => {
+        console.log("title test", label)
+        dispatch(recipeActions.setShowDescription({
+
+            label: label,
+            image: image,
+            mealType: mealType,
+            ingredients: ingredients,
+            id: uuidv4()
+        }))
+
     }
+
+    dispatch(recipeActions.setShowDescription)
 
     return (
         <div>
             <div className='title-wrapper'>
-              <h1>Search your recipe</h1>
-            <form onSubmit={getSearch} className="search-form">
-                <input className="search-bar" type="text" value={search} onChange={updateSearch} />
-                <button className="search-button" type="submit">search</button>
-            </form>  
+                <h1>Search your recipe</h1>
+                <form onSubmit={getSearch} className="search-form">
+                    <input className="search-bar" type="text" value={search} onChange={updateSearch} />
+                    <button className="search-button" type="submit">search</button>
+                </form>
             </div>
-            
-           <div className='recipes-wrapper'>
-            <div className='recipes-container'>
-                {data.map((e, i) => {
-                    return (
-                        <div key={i}>
-                            <div className='box-container' onClick={() => handleRecipe(e)}>
-                                <h4>{e.recipe.label}</h4>
-                                <img className='box-image' src={e.recipe.image} alt="" />
-                            </div>
-                        </div>
 
-                    )
-                })}
+            <div className='recipes-wrapper'>
+                <div className='recipes-container'>
+                    {data.map((e, i) => {
+                        return (
+                            <div key={i}>
+                                <div className='box-container' onClick={() => handleRecipe({label: e.recipe.label, image: e.recipe.image, mealType: e.recipe.mealType, ingredients: e.recipe.ingredients})}>
+                                    <h4>{e.recipe.label}</h4>
+                                    <img className='box-image' src={e.recipe.image} alt="" />
+                                </div>
+                            </div>
+
+                        )
+                    })}
+                </div>
+                <RecipeDescription />
             </div>
-            <RecipeDescription />
-        </div> 
         </div>
-        
+
     )
 }
 

@@ -39,6 +39,9 @@
     justify-content: center;
     margin-right: 20px;
     border-right: 1px solid black;
+    height: calc(100vh - 160px);
+   overflow-y: scroll;
+
   }
   
   .box-container {
@@ -67,11 +70,15 @@
     margin-bottom: 10px ;
   }
   
+  @media only screen and (min-width: 390px) {
+    .recipes-container {
+      justify-content: flex-start;
+    }
+  }
   @media only screen and (min-width: 768px) {
     .recipes-container {
       justify-content: flex-start;
     }
-  
     .box-container {
       max-width: 250px;
     }
