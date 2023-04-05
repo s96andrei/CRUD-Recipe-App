@@ -38,7 +38,7 @@ const Recipes = () => {
         setSearch("");
     }
 
-    const handleRecipe = ({label, image, mealType, ingredients}) => {
+    const handleRecipe = ({label, image, mealType, ingredients, calories}) => {
         console.log("title test", label)
         dispatch(recipeActions.setShowDescription({
 
@@ -46,7 +46,8 @@ const Recipes = () => {
             image: image,
             mealType: mealType,
             ingredients: ingredients,
-            id: uuidv4()
+            id: uuidv4(),
+            calories: (calories).toFixed(0)
         }))
 
     }
@@ -68,7 +69,7 @@ const Recipes = () => {
                     {data.map((e, i) => {
                         return (
                             <div key={i}>
-                                <div className='box-container' onClick={() => handleRecipe({label: e.recipe.label, image: e.recipe.image, mealType: e.recipe.mealType, ingredients: e.recipe.ingredients})}>
+                                <div className='box-container' onClick={() => handleRecipe({label: e.recipe.label, image: e.recipe.image, mealType: e.recipe.mealType, ingredients: e.recipe.ingredients, calories: e.recipe.calories})}>
                                     <h4>{e.recipe.label}</h4>
                                     <img className='box-image' src={e.recipe.image} alt="" />
                                 </div>

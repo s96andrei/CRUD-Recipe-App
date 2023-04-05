@@ -1,17 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const favoriteRecipeSlice = createSlice({
-    name: "favoriteRecipes",
-    initialState: {favoriteRecipes:[]},
+    name: "myRecipeBook",
+    initialState: { myRecipeBook: [] },
     reducers: {
-        setFavoriteRecipes(state, action) {
+        setMyRecipeBook(state, action) {
             const newFavoriteRecipes = action.payload;
             console.log(newFavoriteRecipes);
-            const existingFavorite = state.favoriteRecipes.find((recipe) => recipe.id === newFavoriteRecipes.id)
+            const existingFavorite = state.myRecipeBook.find((recipe) => recipe.id === newFavoriteRecipes.id)
             if (!existingFavorite) {
-                state.favoriteRecipes.push({
-                    id: newFavoriteRecipes.id
-
+                state.myRecipeBook.push({
+                    id: newFavoriteRecipes.id,
+                    label: newFavoriteRecipes.label,
+                    image: newFavoriteRecipes.image,
+                    mealType: newFavoriteRecipes.mealType,
+                    ingredients: newFavoriteRecipes.ingredients,
+                    calories: newFavoriteRecipes.calories
                 })
 
         }

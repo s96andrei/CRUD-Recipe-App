@@ -8,15 +8,16 @@ import { useDispatch } from 'react-redux';
 const RecipeDescription = () => {
   const dispatch = useDispatch();
   const singularRecipe = useSelector((recipeDescr) => recipeDescr.recipe)
-  console.log("test", singularRecipe);
+  console.log("test add to my book", singularRecipe);
 
-  const clickHandler = ({label, image, mealType, ingredients, id}) => {
-    dispatch(favoriteRecipeActions.setFavoriteRecipes({
+  const clickHandler = ({label, image, mealType, ingredients, id, calories}) => {
+    dispatch(favoriteRecipeActions.setMyRecipeBook({
       label: label,
       image: image,
       mealType: mealType,
       ingredients: ingredients,
-      id: id
+      id: id,
+      calories: calories
     }))
   }
 
@@ -44,7 +45,8 @@ const RecipeDescription = () => {
                   </ul>
                 </div>
                 <p>Meal Type : {e.mealType}</p>
-                <button onClick={() => clickHandler({label: e.label, image: e.image, mealType: e.mealType, ingredients: e.ingredients})}>Add to My Recipe</button>
+                <p>Calories :{e.calories} Kcal</p>
+                <button className="description-button" onClick={() => clickHandler({label: e.label, image: e.image, mealType: e.mealType, ingredients: e.ingredients, calories: e.calories})}>Add to My Recipes</button>
               </div>
             )
           })}

@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Home.css";
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -13,7 +14,7 @@ const Home = () => {
           Whether you are an experienced chef or a beginner in the kitchen, our app has something for everyone. We have a variety of recipes to suit different dietary requirements, including vegan, gluten-free, and low-carb options. Plus, our app is regularly updated with new recipes, so you will never run out of ideas for your next meal.
         </p>
         <p>So why wait? Download our recipe app today and start exploring the world of culinary delights!</p>
-        <button>Go to Recipes</button>
+        <Link className='home-button' to="/recipes">Go to Recipes</Link>
       </div>
 
     </div>

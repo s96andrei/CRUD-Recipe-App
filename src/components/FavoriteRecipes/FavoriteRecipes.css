@@ -15,6 +15,10 @@
     flex-direction: column;
 }
 
+.box-favorite-container img {
+    width: 100px;
+}
+
 .edit-button {
     background-color: #3672aa;
     padding: 5px;

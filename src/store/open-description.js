@@ -9,16 +9,13 @@ const recipeSlice = createSlice({
             console.log(newRecipe);
             const existingRecipe = state.recipe.find((recipe) => recipe.id === newRecipe.id)
             if (!existingRecipe) {
-                // state.recipe.push({
-                //     id: newRecipe.id
-
-                // })
                 state.recipe = [{ 
                     id: newRecipe.id,
                     label: newRecipe.label,
                     image: newRecipe.image,
                     mealType: newRecipe.mealType,
-                    ingredients: newRecipe.ingredients
+                    ingredients: newRecipe.ingredients,
+                    calories: newRecipe.calories
                  }];
             }
             console.log("state test", state.recipe)
