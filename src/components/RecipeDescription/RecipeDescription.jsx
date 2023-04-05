@@ -2,7 +2,6 @@ import React from 'react';
 import "./RecipeDescription.css";
 import { useSelector } from 'react-redux';
 import { favoriteRecipeActions} from '../../store/favorite-slice';
-import recipeActions from "../../store/open-description";
 import { useDispatch } from 'react-redux';
 
 const RecipeDescription = () => {
