@@ -1,3 +1,26 @@
+.description-wrapper {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff46;
+    padding: 20px 10px 20px 10px;
+    width: 500px;
+}
+
+.description-wrapper h4 {
+    color: #fff;
+    padding-bottom: 10px;
+}
+
+.description-wrapper ul {
+    list-style-type: none;
+}
+
+.description-wrapper img {
+width: 200px;
+border-radius: 5px;
+padding-bottom: 10px;
+}
+
 .description-button {
     margin-top:15px;
     padding: 12px 24px;
@@ -5,4 +28,10 @@
     color: white;
     border-radius: 4px;
     text-decoration: none;
+}
+
+.recipe-description {
+    color: #fff;
+    background-color: #ffffff79;
+    width: 500px;
 }

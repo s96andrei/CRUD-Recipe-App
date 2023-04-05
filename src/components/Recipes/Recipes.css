@@ -1,12 +1,20 @@
+.recipe-background {
+  background: url(../../assets/background4.jpg);
+  height: 100vh ;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  margin-top: 80px;
+}
 
 .title-wrapper {
-  margin-top: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap:15px;
   margin-bottom: 15px;
+  color: #fff;
 }
 
 .search-button {
@@ -40,10 +48,12 @@
     margin-right: 20px;
     border-right: 1px solid black;
     height: calc(100vh - 160px);
-   overflow-y: scroll;
+    overflow-y: scroll;
 
   }
   
+
+
   .box-container {
     display: flex;
     flex-direction: column ;

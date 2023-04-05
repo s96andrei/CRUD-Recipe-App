@@ -23,7 +23,7 @@ const RecipeDescription = () => {
 
 
   return (
-    <div>
+    <div className='description-wrapper'>
       {singularRecipe.recipe.length > 0 ?
         <div>
           {singularRecipe.recipe.map((e, i) => {
@@ -51,7 +51,7 @@ const RecipeDescription = () => {
           })}
         </div>
         :
-        <div>
+        <div className='recipe-description'>
           <h2>Add your recipe here</h2>
           <h6>Welcome to our recipe app, your one-stop destination for all your culinary needs!
             With our user-friendly interface, you can easily search for recipes, save your favorite ones and create your own culinary book based on your chosen recipes.

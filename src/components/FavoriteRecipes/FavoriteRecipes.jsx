@@ -9,8 +9,9 @@ const FavoriteRecipes = () => {
 
   return (
 
-      <div className='favorites-container'>
+    <div className='favorites-container'>
         <h1>My Recipes</h1>
+      <div className='favorites-wrapper'>
         <div className='box-favorite-container'>
           {recipeBook.map((e, i) => {
             return (
@@ -32,6 +33,8 @@ const FavoriteRecipes = () => {
           })}
         </div>
       </div>
+
+    </div>
 
   )
 }

@@ -55,7 +55,7 @@ const Recipes = () => {
     dispatch(recipeActions.setShowDescription)
 
     return (
-        <div>
+        <div className='recipe-background'>
             <div className='title-wrapper'>
                 <h1>Search your recipe</h1>
                 <form onSubmit={getSearch} className="search-form">
