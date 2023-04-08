@@ -11,7 +11,7 @@ const Home = () => {
 
           With our user-friendly interface, you can easily search for recipes, save your favorite ones, and even create a shopping list based on your chosen recipes. Our app also offers helpful features like step-by-step instructions and ingredient measurements, making sure you have everything you need to prepare delicious meals that will impress your family and friends.
 
-          Whether you are an experienced chef or a beginner in the kitchen, our app has something for everyone. We have a variety of recipes to suit different dietary requirements, including vegan, gluten-free, and low-carb options. Plus, our app is regularly updated with new recipes, so you will never run out of ideas for your next meal.
+          Whether you are an experienced chef or a beginner in the kitchen, our app has something for everyone. We have a variety of recipes to suit different dietary requirements, including vegan, gluten-free, and low-carb options. Plus, our app is regularly updated with new recipes, so you will never run out of ideas for your next meal !
         </p>
         <p>So why wait? Download our recipe app today and start exploring the world of culinary delights!</p>
         <Link className='home-button' to="/recipes">Go to Recipes</Link>
