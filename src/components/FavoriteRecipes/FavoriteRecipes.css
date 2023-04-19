@@ -1,7 +1,8 @@
 .favorites-container {
     margin-top: 80px;
     background: url(../../assets/my-recipe.jpg);
-    height: calc(100vh - 80px) ;
+    min-height: 100vh;
+    /* height: calc(100vh - 80px); */
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -9,12 +10,15 @@
 
 .favorites-container h1 {
     color: #fff;
+    text-align: center;
+    font-size: 50px;
+    filter: opacity(0.8);
 }
+
 .favorites-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* width: 500px; */
 }
 
 
@@ -23,10 +27,15 @@
     margin-top: 10px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap:5px;
+    flex-direction: column;
+    gap: 5px;
     background-color: #ffffffab;
-    padding: 20px 10px 20px 10px;
+    padding: 20px 30px 20px 30px;
+}
+
+.card-recipe {
+    padding: 15px;
+    border-bottom: 3px solid rgb(255, 106, 0);
 }
 
 .box-favorite-container button {
@@ -38,16 +47,10 @@
     width: 100px;
 }
 
-.edit-button {
-    background-color: #3672aa;
-    padding: 5px;
-    border-radius: 5px;
-    color: #fff;
-}
-
 .delete-button {
     background-color: #c53c1a;
     padding: 5px;
     border-radius: 5px;
     color: #fff;
+    margin-top: 15px;
 }

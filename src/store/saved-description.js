@@ -7,9 +7,9 @@ const recipeDescriptionSave = createSlice({
         setSaveRecipeDescription(state, action) {
             const newSavedDescription = action.payload;
             console.log("sended data", newSavedDescription);
-            const existingFavorite = state.recipeDescription.find((recipe) => recipe.id === newSavedDescription.id)
-            if (existingFavorite) {
-                // console.log("Test SABVE")
+            const savedRecipe = state.recipeDescription.find((recipe) => recipe.label === newSavedDescription.label)
+            if (savedRecipe) {
+                console.log("extra")
             }
             else {
                 state.recipeDescription.push({
@@ -21,7 +21,15 @@ const recipeDescriptionSave = createSlice({
                     calories: newSavedDescription.calories
                 })
             }
-        }
+            console.log('TESSSST',Array.from(state.recipeDescription))
+        },
+
+        removeSavedRecipeDescription(state, action) {
+            const index = state.recipeDescription.findIndex(recipe => recipe.id === action.payload);
+            if (index !== -1) {
+              state.recipeDescription.splice(index, 1);
+            }
+          }
     }
 })
 
