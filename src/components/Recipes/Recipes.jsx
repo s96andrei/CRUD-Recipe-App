@@ -18,13 +18,13 @@ const Recipes = () => {
 
     useEffect(() => {
         dataFetch();
+        //eslint-disable-next-line
     }, [query]);
 
     const dataFetch = async () => {
         const data = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=10&calories=591-722&health=alcohol-free`)
         const response = await data.json();
         setData(response.hits);
-        console.log(response.hits);
     };
 
     const updateSearch = e => {
@@ -38,10 +38,8 @@ const Recipes = () => {
         setSearch("");
     }
 
-    const handleRecipe = ({label, image, mealType, ingredients, calories}) => {
-        console.log("title test", label)
+    const handleRecipe = ({ label, image, mealType, ingredients, calories }) => {
         dispatch(recipeActions.setShowDescription({
-
             label: label,
             image: image,
             mealType: mealType,
@@ -49,10 +47,7 @@ const Recipes = () => {
             id: uuidv4(),
             calories: (calories).toFixed(0)
         }))
-
     }
-
-    dispatch(recipeActions.setShowDescription)
 
     return (
         <div className='recipe-background'>
@@ -69,7 +64,7 @@ const Recipes = () => {
                     {data.map((e, i) => {
                         return (
                             <div key={i}>
-                                <div className='box-container' onClick={() => handleRecipe({label: e.recipe.label, image: e.recipe.image, mealType: e.recipe.mealType, ingredients: e.recipe.ingredients, calories: e.recipe.calories})}>
+                                <div className='box-container' onClick={() => handleRecipe({ label: e.recipe.label, image: e.recipe.image, mealType: e.recipe.mealType, ingredients: e.recipe.ingredients, calories: e.recipe.calories })}>
                                     <h4>{e.recipe.label}</h4>
                                     <img className='box-image' src={e.recipe.image} alt="" />
                                 </div>

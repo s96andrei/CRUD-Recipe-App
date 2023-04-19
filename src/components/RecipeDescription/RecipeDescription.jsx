@@ -1,23 +1,25 @@
 import React from 'react';
 import "./RecipeDescription.css";
 import { useSelector } from 'react-redux';
-import { favoriteRecipeActions} from '../../store/favorite-slice';
 import { useDispatch } from 'react-redux';
+import {recipeSavedActions} from "../../store/saved-description";
+import { v4 as uuidv4 } from "uuid";
 
 const RecipeDescription = () => {
+
   const dispatch = useDispatch();
   const singularRecipe = useSelector((recipeDescr) => recipeDescr.recipe)
-  console.log("test add to my book", singularRecipe);
 
-  const clickHandler = ({label, image, mealType, ingredients, id, calories}) => {
-    dispatch(favoriteRecipeActions.setMyRecipeBook({
+  const clickHandler = ({label, image, mealType, ingredients, calories}) => {
+
+    dispatch(recipeSavedActions.setSaveRecipeDescription({
       label: label,
       image: image,
       mealType: mealType,
       ingredients: ingredients,
-      id: id,
+      id: uuidv4(),
       calories: calories
-    }))
+  }))
   }
 
 

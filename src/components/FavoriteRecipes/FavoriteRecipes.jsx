@@ -4,16 +4,14 @@ import { useSelector } from 'react-redux';
 
 
 const FavoriteRecipes = () => {
-  const recipeBook = useSelector((myBook) => myBook.favoriteRecipe.myRecipeBook)
-  console.log("book test", recipeBook)
-
+  const savedRecipes = useSelector((savedDescr) => savedDescr.savedRecipe.recipeDescription);
+ 
   return (
-
     <div className='favorites-container'>
-        <h1>My Recipes</h1>
+      <h1>My Recipes</h1>
       <div className='favorites-wrapper'>
         <div className='box-favorite-container'>
-          {recipeBook.map((e, i) => {
+          {savedRecipes.map((e, i) => {
             return (
               <div key={i}>
                 <img src={e.image} alt={e.label} />
@@ -33,9 +31,7 @@ const FavoriteRecipes = () => {
           })}
         </div>
       </div>
-
     </div>
-
   )
 }
 
