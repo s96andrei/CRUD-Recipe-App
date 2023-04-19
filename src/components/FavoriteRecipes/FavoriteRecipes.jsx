@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./FavoriteRecipes.css"
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
@@ -13,18 +13,17 @@ const FavoriteRecipes = () => {
   }
   console.log(savedRecipes);
 
+  // const [showRecipes, setShowRecipes] = useState(savedRecipes)
 
   // useEffect(() => {
-  //   localStorage.setItem('dataKey', JSON.stringify(savedRecipes));
-  // }, [savedRecipes]);
+  //   localStorage.setItem('dataKey', JSON.stringify(showRecipes));
+  // }, [showRecipes]);
 
 
   // useEffect(() => {
   //   const savedRecipesJSON = JSON.stringify(savedRecipes);
   //   localStorage.setItem('savedRecipes', savedRecipesJSON);
   // }, [savedRecipes]);
-
-
 
   return (
     <div className='favorites-container'>
